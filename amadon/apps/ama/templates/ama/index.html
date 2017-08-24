@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css">      <title>Amadon</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="row">
+                <div class="col-5">
+                    <h3>Item:</h3>                        
+                    <ul class="list-group">
+                        <li class="list-group-item">{{ item1 }}</li>
+                        <li class="list-group-item">{{ item2 }}</li>
+                        <li class="list-group-item">{{ item3 }}</li>
+                        <li class="list-group-item">{{ item4 }}</li>
+                        <li class="list-group-item">{{ item5 }}</li>
+                    </ul>
+                </div>
+                <div class="col">
+                    <h3>Price:</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">${{ item1_price }}</li>
+                        <li class="list-group-item">${{ item2_price }}</li>
+                        <li class="list-group-item">${{ item3_price }}</li>
+                        <li class="list-group-item">${{ item4_price }}</li>
+                        <li class="list-group-item">${{ item5_price }}</li>
+                    </ul>
+                </div>
+                <div class="col-5">
+                    <h3>Purchase:</h3>
+                    <ul class="list-group">
+                        <li class="list-group-item">
+                            <form action="/amadon/process" method="POST">
+                                {% csrf_token %}
+                                <select name="item_quant">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <input type='hidden' name='item_type' value='{{ item1 }}' />
+                                <input type='hidden' name='item_id' value='{{ item1_id }}' />
+                                <input type='submit' value='Buy!' />
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <form action="/amadon/process" method="POST">
+                                {% csrf_token %}
+                                <select name="item_quant">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <input type='hidden' name='item_type' value='{{ item2 }}' />
+                                <input type='hidden' name='item_id' value='{{ item2_id }}' />
+                                <input type='submit' value='Buy!' />
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <form action="/amadon/process" method="POST">
+                                {% csrf_token %}
+                                <select name="item_quant">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <input type='hidden' name='item_type' value='{{ item3 }}' />
+                                <input type='hidden' name='item_id' value='{{ item3_id }}' />
+                                <input type='submit' value='Buy!' />
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <form action="/amadon/process" method="POST">
+                                {% csrf_token %}
+                                <select name="item_quant">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <input type='hidden' name='item_type' value='{{ item4 }}' />
+                                <input type='hidden' name='item_id' value='{{ item4_id }}' />
+                                <input type='submit' value='Buy!' />
+                            </form>
+                        </li>
+                        <li class="list-group-item">
+                            <form action="/amadon/process" method="POST">
+                                {% csrf_token %}
+                                <select name="item_quant">
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                    <option>5</option>
+                                </select>
+                                <input type='hidden' name='item_type' value='{{ item5 }}' />
+                                <input type='hidden' name='item_id' value='{{ item5_id }}' />
+                                <input type='submit' value='Buy!' />
+                            </form>
+                        </li>     
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
